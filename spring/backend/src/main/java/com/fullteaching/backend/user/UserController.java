@@ -50,7 +50,8 @@ public class UserController {
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public ResponseEntity<User> newUser(@RequestBody String[] userData) throws Exception {
 		
-		System.out.println("Signing up a user...");
+		System.out.println("Signing up a user..."+userData[0]);
+		System.out.println(userRepository.findByName(userData[0]));
 		
 		if(this.validateGoogleCaptcha(userData[3])){
 		

@@ -20,7 +20,6 @@
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
@@ -28,6 +27,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/pablo/Documents/Git/full-teaching/openvidu-java-client.jar"/>
+	<classpathentry kind="lib" path="/home/gtunon/git/full-teaching/openvidu-java-client.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

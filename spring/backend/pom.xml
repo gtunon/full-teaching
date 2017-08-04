@@ -5,7 +5,7 @@
   <groupId>com.fullteaching</groupId>
   <artifactId>full-teaching</artifactId>
   <version>0.5-SNAPSHOT</version>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <name>backend</name>
   <url>http://maven.apache.org</url>
@@ -81,7 +81,19 @@
 	            </webResources>
 	        </configuration>
 	    </plugin>
-	    
+	    <plugin>
+		    <groupId>org.pitest</groupId>
+		    <artifactId>pitest-maven</artifactId>
+		    <version>1.2.2</version>
+		    <configuration>
+		        <targetClasses>
+		            <param>com.fullteaching.backend.user.*</param>
+		        </targetClasses>
+		        <targetTests>
+		            <param>com.fullteaching.backend.unitary.user*</param>
+		        </targetTests>
+		    </configuration>
+		</plugin>
    	</plugins>
    </build>
 
@@ -106,12 +118,6 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-devtools</artifactId>
 	</dependency>
- 
-    <dependency>
-    	<groupId>junit</groupId>
-    	<artifactId>junit</artifactId>
-    	<scope>test</scope>
-    </dependency>
     
     <dependency>
     	<groupId>mysql</groupId>
@@ -129,6 +135,22 @@
 		<artifactId>spring-boot-starter-websocket</artifactId>
 	</dependency>
 	
+	<!-- Tests dependencies -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-test</artifactId>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-test</artifactId>
+	    <scope>test</scope>
+	</dependency>
 	
     <!-- Read files -->
     <dependency>
