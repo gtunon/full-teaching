@@ -9,6 +9,7 @@ import com.fullteaching.backend.coursedetails.CourseDetails;
 import com.fullteaching.backend.forum.Forum;
 import com.fullteaching.backend.session.Session;
 import com.fullteaching.backend.unitary.AbstractUnitTest;
+import com.fullteaching.backend.unitary.utils.CourseTestUtils;
 import com.fullteaching.backend.user.User;
 
 public class SessionUnitaryTest extends AbstractUnitTest {
@@ -21,44 +22,35 @@ public class SessionUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testEmptySession() {
-		Session session = new Session();
-		Assert.notNull(session);
-	}
-
-	@Test
-	public void testSession() {
+	public void newSessionTest() {
+		//Empty Session
+		Session emptySession = new Session();
+		Assert.notNull(emptySession);
+		
+		//Not empty
 		Long date = System.currentTimeMillis();
 		Session session = new Session(title, description, date);
 		Assert.notNull(session);
 		Assert.isTrue(date == session.getDate());
 		Assert.isTrue(title.equals(session.getTitle()));
 		Assert.isTrue(description.equals(session.getDescription()));
-	}
-
-	@Test
-	public void testSessionWithCourse() {
-		CourseDetails cd = new CourseDetails();
-		cd.setInfo("This is the info");
-		Forum f = new Forum(false);
-		cd.setForum(f);
+		
+		//with course 
 		String[] roles = {"STUDENT"};
 		User u = new User("mock_teacher","mock2222","t_mocky", null,roles);
-		//prepare test
-		Course c = new Course("to modify", "/../assets/images/default_session_image.png", 
-				u,cd);
-
-		Long date = System.currentTimeMillis();
-		Session session = new Session(title, description, date, c);
-		Assert.notNull(session);
-		Assert.isTrue(date == session.getDate());
-		Assert.isTrue(title.equals(session.getTitle()));
-		Assert.isTrue(description.equals(session.getDescription()));
-		Assert.isTrue(c.equals(session.getCourse()));
+		Course c= CourseTestUtils.newCourseWithCd("course", u, null, "this is the info", false);
+		
+		Session c_session = new Session(title, description, date, c);
+		Assert.notNull(c_session);
+		Assert.isTrue(date == c_session.getDate());
+		Assert.isTrue(title.equals(c_session.getTitle()));
+		Assert.isTrue(description.equals(c_session.getDescription()));
+		Assert.isTrue(c.equals(c_session.getCourse()));
 	}
 
+
 	@Test
-	public void testGetTitle() {
+	public void setAndGetSessionTitleTest() {
 		Session session = new Session();
 		session.setTitle(title);
 		Assert.notNull(session);
@@ -66,7 +58,7 @@ public class SessionUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetDescription() {
+	public void setAndGetSessionDescriptionTest() {
 		Session session = new Session();
 		session.setDescription(description);
 		Assert.notNull(session);
@@ -74,7 +66,7 @@ public class SessionUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetDate() {
+	public void setAndGetSessionDateTest() {
 		Session session = new Session();
 		Long date = System.currentTimeMillis();
 		session.setDate(date);
@@ -83,16 +75,11 @@ public class SessionUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetCourse() {
-		CourseDetails cd = new CourseDetails();
-		cd.setInfo("This is the info");
-		Forum f = new Forum(false);
-		cd.setForum(f);
+	public void setAndGetSessionCourseTest() {
 		String[] roles = {"STUDENT"};
 		User u = new User("mock_teacher","mock2222","t_mocky", null,roles);
-		//prepare test
-		Course c = new Course("to modify", "/../assets/images/default_session_image.png", 
-				u,cd);
+		Course c= CourseTestUtils.newCourseWithCd("course", u, null, "this is the info", false);
+		
 		Session session = new Session();
 		session.setCourse(c);
 		Assert.notNull(session);
@@ -100,7 +87,7 @@ public class SessionUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testEqualsObject() {
+	public void equalSessionTest() {
 		Session session1 = new Session();
 		session1.setId(1);
 		Session session2 = new Session();
