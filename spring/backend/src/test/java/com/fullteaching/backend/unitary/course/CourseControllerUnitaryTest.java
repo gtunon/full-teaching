@@ -79,8 +79,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test unauthorized");
 			e.printStackTrace();
+			fail("EXCEPTION: //test unauthorized");
 		}
 		
 		//KO no long id
@@ -100,8 +100,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //KO no long id");
 			e.printStackTrace();
+			fail("EXCEPTION: //KO no long id");
 		}
 		
 	}
@@ -123,8 +123,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 					Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 				
 				} catch (Exception e) {
-					fail("EXCEPTION: //test OK");
 					e.printStackTrace();
+					fail("EXCEPTION: //test OK");
 				}
 				//test unauthorized
 				try {
@@ -140,8 +140,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 					Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 				
 				} catch (Exception e) {
-					fail("EXCEPTION: //KO unauthorized");
 					e.printStackTrace();
+					fail("EXCEPTION: //KO unauthorized");
 				}
 				//KO no long id
 				try {
@@ -157,8 +157,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 					Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 				
 				} catch (Exception e) {
-					fail("EXCEPTION: //test KO no long id");
 					e.printStackTrace();
+					fail("EXCEPTION: //test KO no long id");
 				}
 	}
 
@@ -186,8 +186,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 		//test OK cd
 		try {
@@ -204,8 +204,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK cd");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK cd");
 		}
 		//test unauthorized
 		try {
@@ -221,8 +221,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test unauthorized");
 			e.printStackTrace();
+			fail("EXCEPTION: //test unauthorized");
 		}
 		
 		//test bad request
@@ -239,8 +239,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test  bad request");
 			e.printStackTrace();
+			fail("EXCEPTION: //test  bad request");
 		}
 		
 	}
@@ -328,8 +328,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test unauthorized");
 			e.printStackTrace();
+			fail("EXCEPTION: //test unauthorized");
 		}
 			
 	}
@@ -354,8 +354,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test unauthorized");
 			e.printStackTrace();
+			fail("EXCEPTION: //test unauthorized");
 		}
 		
 		//test OK request
@@ -372,8 +372,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test BAD_REQUEST");
 			e.printStackTrace();
+			fail("EXCEPTION: //test BAD_REQUEST");
 		}
 		
 		try {
@@ -389,8 +389,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 				Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 			} catch (Exception e) {
-				fail("EXCEPTION: //test OK");
 				e.printStackTrace();
+				fail("EXCEPTION: //test OK");
 			}
 			
 	}
@@ -438,8 +438,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 				Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 			} catch (Exception e) {
-				fail("EXCEPTION: //test UNAUTHORIZED");
 				e.printStackTrace();
+				fail("EXCEPTION: //test UNAUTHORIZED");
 			}
 		//test bad request
 		try {
@@ -455,8 +455,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test BAD_REQUEST");
 			e.printStackTrace();
+			fail("EXCEPTION: //test BAD_REQUEST");
 		}
 		
 		//test ok 1
@@ -474,8 +474,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 		
 		//test ok 2
@@ -493,8 +493,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status (2) "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 		
 	}
@@ -528,8 +528,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 				Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 			} catch (Exception e) {
-				fail("EXCEPTION: //test UNAUTHORIZED");
 				e.printStackTrace();
+				fail("EXCEPTION: //test UNAUTHORIZED");
 			}
 		//test bad request
 		try {
@@ -545,8 +545,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test BAD_REQUEST");
 			e.printStackTrace();
+			fail("EXCEPTION: //test BAD_REQUEST");
 		}
 		
 		//test ok 
@@ -564,8 +564,8 @@ public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTes
 			Assert.assertEquals("failure - expected HTTP status  "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 	}
 

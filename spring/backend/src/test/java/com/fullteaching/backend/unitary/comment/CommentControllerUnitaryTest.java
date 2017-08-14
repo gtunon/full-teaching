@@ -80,8 +80,8 @@ public class CommentControllerUnitaryTest extends AbstractLoggedControllerUnitTe
 			Assert.assertEquals("failure - expected user x" , loggedUser,e.getComments().get(0).getUser());
 
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 		//test UNAUTHORIZED 
 		try {
@@ -169,8 +169,8 @@ public class CommentControllerUnitaryTest extends AbstractLoggedControllerUnitTe
 			Assert.assertEquals("failure - expected user x" , loggedUser, e.getComments().get(0).getReplies().get(0).getUser());
 		
 		} catch (Exception e) {
-			fail("EXCEPTION: //test OK");
 			e.printStackTrace();
+			fail("EXCEPTION: //test OK");
 		}
 		//test UNAUTHORIZED 
 		try {

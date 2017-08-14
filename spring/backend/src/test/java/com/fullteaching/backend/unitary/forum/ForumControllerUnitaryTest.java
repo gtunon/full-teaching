@@ -63,8 +63,8 @@ public class ForumControllerUnitaryTest extends AbstractLoggedControllerUnitTest
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test UNAUTHORIZED");
 			e.printStackTrace();
+			fail("EXCEPTION: //test UNAUTHORIZED");
 		}
 		
 		//test BAD_REQUEST 
@@ -81,8 +81,8 @@ public class ForumControllerUnitaryTest extends AbstractLoggedControllerUnitTest
 			Assert.assertEquals("failure - expected HTTP status "+expected, expected, status);
 			
 		} catch (Exception e) {
-			fail("EXCEPTION: //test BAD_REQUEST");
 			e.printStackTrace();
+			fail("EXCEPTION: //test BAD_REQUEST");
 		}
 		
 	}
