@@ -3,6 +3,7 @@ package com.fullteaching.backend.unitary.utils;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 
@@ -14,12 +15,17 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-public class LoginUtils {
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fullteaching.backend.user.User;
+
+public class LoginTestUtils {
 
 	private static String login_uri = "/api-logIn";
 	private static String new_user_uri = "/api-users/new";
 
-	public static HttpSession logIn(MockMvc mvc, String user, String password) throws UnsupportedEncodingException, Exception {
+	public static HttpSession logIn(MockMvc mvc, String user, String password, User loggedUser) throws UnsupportedEncodingException, Exception {
 		
 		String userPass = user+":"+password;
 
@@ -36,25 +42,34 @@ public class LoginUtils {
 											HttpStatus.OK.value() +
 											" but was: "+status_login, 
 					status_login==HttpStatus.OK.value());
-		
+		if (loggedUser==null) {
+			String content = result_login.getResponse().getContentAsString();
+			loggedUser = json2User(content);
+			result_login.getRequest().getSession().setAttribute("loggedUser", loggedUser);
+		}
 		return result_login.getRequest().getSession();
 	}
-	
-	public static void registerUserIfNotExists(MockMvc mvc, String user_parameters) throws Exception {
+	public static HttpSession logIn(MockMvc mvc, String user, String password) throws UnsupportedEncodingException, Exception {
+		return logIn(mvc,user,password, null);
+	}
+	public static User registerUserIfNotExists(MockMvc mvc, String user_parameters) throws Exception {
 		
-		MvcResult result_insret = mvc.perform(post(new_user_uri)
+		MvcResult result_insert = mvc.perform(post(new_user_uri)
 					.contentType(MediaType.APPLICATION_JSON_VALUE)
 					.content(user_parameters)
 				).andReturn();	
 		
-		int status_insert = result_insret.getResponse().getStatus();
-	
-		Assert.assertTrue("failure login - expected HTTP status "+
-				HttpStatus.CREATED.value() +" or "+ 
-				HttpStatus.CONFLICT.value()+" but was: "+
-				status_insert, 
-				(status_insert==HttpStatus.CONFLICT.value() || status_insert==HttpStatus.CREATED.value()));
+		int status_insert = result_insert.getResponse().getStatus();
+		
+		
+		if (status_insert == HttpStatus.CREATED.value()) {
+			String content = result_insert.getResponse().getContentAsString();
+			return json2User(content);
+		}
+		
+		return null;
 	}
+	
 	
 	public static String utf8_to_b64(String str) throws UnsupportedEncodingException {
 		Base64.Encoder enc= Base64.getEncoder();
@@ -63,4 +78,10 @@ public class LoginUtils {
         return new String(strenc);
 
 	}
+	
+	public static User json2User(String json) throws JsonParseException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		return mapper.readValue(json, User.class);
+	}
+	
 }

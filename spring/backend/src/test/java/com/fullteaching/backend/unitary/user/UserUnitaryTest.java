@@ -27,20 +27,19 @@ public class UserUnitaryTest extends AbstractUnitTest {
 	String picture = "picture/test.jpg";
 	String[] roles = {"STUDENT"};
 	
+	
 	/**
-	 * Test method for {@link com.fullteaching.backend.user.User#User()}.
-	 */
-	@Test
-	public void newEmptyUserTest() {
-		User u = new User();
-		Assert.notNull(u, "User failed to be created");
-	}
-
-	/**
-	 * Test method for {@link com.fullteaching.backend.user.User#User(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])}.
+	 * Test method for {@link com.fullteaching.backend.user.User#User(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String[])}
+	 * and {@link com.fullteaching.backend.user.User#User()}.
 	 */
 	@Test
 	public void newUserTest() {
+		
+		//Empty user
+		User emptyUser = new User();
+		Assert.notNull(emptyUser, "User failed to be created");
+		
+		//User with picture
 		User u = new User(name, password, nickName, picture,roles);
 		Assert.notNull(u, "User failed to be created");
 		Assert.isTrue(name.equals(u.getName()), "User failed to be created");
@@ -48,6 +47,8 @@ public class UserUnitaryTest extends AbstractUnitTest {
 		Assert.isTrue(nickName.equals(u.getNickName()), "User failed to be created");
 		Assert.isTrue(picture.equals(u.getPicture()), "User failed to be created");
 		Assert.isTrue(roles.length == u.getRoles().size(), "User failed to be created");
+		
+		//user witout picture
 		u = new User(name, password, nickName, null,roles);
 		Assert.notNull(u, "User failed to be created");
 		Assert.isTrue(name.equals(u.getName()), "User failed to be created");

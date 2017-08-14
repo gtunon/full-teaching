@@ -87,11 +87,20 @@
 		    <version>1.2.2</version>
 		    <configuration>
 		        <targetClasses>
-		            <param>com.fullteaching.backend.user.*</param>
+		        	<param>com.fullteaching.backend.*</param>	 
+		           	<!-- <param>com.fullteaching.backend.session.*</param> -->
 		        </targetClasses>
 		        <targetTests>
-		            <param>com.fullteaching.backend.unitary.user*</param>
+		             <!-- <param>com.fullteaching.backend.unitary.session*</param> -->
+		             <param>com.fullteaching.backend.unitary.*</param>
 		        </targetTests>
+		        <avoidCallsTo>
+				    <avoidCallsTo>java.util.logging</avoidCallsTo>
+				    <avoidCallsTo>org.apache.log4j</avoidCallsTo>
+				    <avoidCallsTo>org.slf4j</avoidCallsTo>
+				    <avoidCallsTo>org.apache.commons.logging</avoidCallsTo>
+				    <avoidCallsTo>java.io.PrintStream</avoidCallsTo>
+				</avoidCallsTo>
 		    </configuration>
 		</plugin>
    	</plugins>
