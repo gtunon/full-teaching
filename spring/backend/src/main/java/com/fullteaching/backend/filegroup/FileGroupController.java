@@ -380,7 +380,11 @@ public class FileGroupController {
 					
 				}else{
 					//The file to delete does not exist or does not have a fileGroup parent
-					fileRepository.delete(id_file);
+					File file_aux = fileRepository.findOne(id_file);
+					if(file_aux != null) {
+						//if the file don't exist this fails
+						fileRepository.delete(id_file);
+					}
 					return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 				}
 			}else{
