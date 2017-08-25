@@ -134,6 +134,13 @@ public class CourseTestUtils {
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.readValue(json, Course.class);
 	}
+	
+	public static CourseDetails json2CourseDetails(String json) throws JsonParseException, JsonMappingException, IOException {
+		ObjectMapper mapper = new ObjectMapper();
+		json = json.replaceAll("\"" + "fileExtension" + "\"[ ]*:[^,}\\]]*[,]?", "");
+		json = json.replaceAll(",}","}");
+		return mapper.readValue(json, CourseDetails.class);
+	}
 
 
 	public static Course newCourse (String courseTitle, User loggedUser, Set<User> attendants) {
@@ -157,4 +164,6 @@ public class CourseTestUtils {
 		
 		return c;
 	}
+	
+	
 }

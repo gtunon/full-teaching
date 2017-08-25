@@ -146,7 +146,7 @@ public class UserControllerUnitaryTest extends AbstractControllerUnitTest {
 			LoginTestUtils.registerUserIfNotExists(mvc, ok_parameters);
 			
 			/*Login user*/
-			HttpSession session = LoginTestUtils.logIn(mvc, "fakeemail@gmail.com", "Mock66666");
+			HttpSession session = LoginTestUtils.logIn(mvc, "unique@gmail.com", "Mock66666");
 			
 			try {
 			/*Test change password OK*/

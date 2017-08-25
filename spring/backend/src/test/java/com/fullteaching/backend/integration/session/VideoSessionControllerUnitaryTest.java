@@ -1,6 +1,6 @@
 package com.fullteaching.backend.integration.session;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 import org.junit.Assert;
@@ -13,12 +13,12 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
 import com.fullteaching.backend.course.Course;
+import com.fullteaching.backend.integration.AbstractLoggedControllerIntegrationTest;
 import com.fullteaching.backend.session.Session;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.unitary.utils.CourseTestUtils;
 import com.fullteaching.backend.unitary.utils.SessionTestUtils;
 
-public class VideoSessionControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class VideoSessionControllerUnitaryTest extends AbstractLoggedControllerIntegrationTest {
 
 	private static String getIdAndToken_uri="/api-video-sessions/get-sessionid-token/";
 	//private static String removeUser_uri="/api-video-sessions/remove-user";
@@ -46,7 +46,7 @@ public class VideoSessionControllerUnitaryTest extends AbstractLoggedControllerU
 			MvcResult result =  mvc.perform(get(getIdAndToken_uri+s.getId())
 					                .contentType(MediaType.APPLICATION_JSON_VALUE)
 					                .session((MockHttpSession) httpSession)
-					                ).andReturn();
+					                ).andReturn(); //RETURNS 403 ... CHECK E2E manual testing works...
 			
 			//String content = result.getResponse().getContentAsString();
 			int status = result.getResponse().getStatus();

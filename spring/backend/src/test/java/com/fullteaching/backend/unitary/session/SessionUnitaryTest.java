@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.springframework.util.Assert;
 
 import com.fullteaching.backend.course.Course;
-import com.fullteaching.backend.coursedetails.CourseDetails;
-import com.fullteaching.backend.forum.Forum;
 import com.fullteaching.backend.session.Session;
 import com.fullteaching.backend.unitary.AbstractUnitTest;
 import com.fullteaching.backend.unitary.utils.CourseTestUtils;

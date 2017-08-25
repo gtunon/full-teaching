@@ -17,11 +17,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fullteaching.backend.course.CourseRepository;
 import com.fullteaching.backend.coursedetails.CourseDetailsRepository;
+import com.fullteaching.backend.file.FileRepository;
+import com.fullteaching.backend.filegroup.FileGroupRepository;
 import com.fullteaching.backend.forum.ForumRepository;
 import com.fullteaching.backend.security.AuthorizationService;
 import com.fullteaching.backend.session.SessionRepository;
 import com.fullteaching.backend.user.UserComponent;
 import com.fullteaching.backend.user.UserRepository;
+
+import io.openvidu.java.client.OpenVidu;
 
 @WebAppConfiguration
 public abstract class AbstractControllerUnitTest extends AbstractUnitTest {
@@ -47,6 +51,13 @@ public abstract class AbstractControllerUnitTest extends AbstractUnitTest {
 	@Mock
 	private SessionRepository sessionRepository;
 	
+	@Mock
+	private FileGroupRepository fileGroupRepository;
+	
+	@Mock
+	private FileRepository fileRepository;
+	
+		
 	protected MockMvc mvc; 
 	
 
