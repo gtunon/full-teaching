@@ -87,35 +87,35 @@
 		    <version>1.2.2</version>
 		    <configuration>
 		        <targetClasses>	 
-<!-- 		        	<param>com.fullteaching.backend.chat.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.comment.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.course.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.coursedetails.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.entry.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.file.File*</param> -->
+		        	<param>com.fullteaching.backend.chat.*</param> 
+		        	<param>com.fullteaching.backend.comment.*</param> 
+		        	<param>com.fullteaching.backend.course.*</param> 
+		        	<param>com.fullteaching.backend.coursedetails.*</param> 
+		        	<param>com.fullteaching.backend.entry.*</param> 
+		        	<param>com.fullteaching.backend.file.File*</param>
 		        	<param>com.fullteaching.backend.filegroup.*</param> 
-<!-- 		        	<param>com.fullteaching.backend.filereader.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.forum.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.security.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.session.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.user.*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.utils.*</param>  -->
+		        	<param>com.fullteaching.backend.filereader.*</param> 
+		        	<param>com.fullteaching.backend.forum.*</param> 
+		        	<param>com.fullteaching.backend.security.*</param> 
+		        	<param>com.fullteaching.backend.session.*</param> 
+		        	<param>com.fullteaching.backend.user.*</param> 
+		        	<param>com.fullteaching.backend.utils.*</param> 
 		           	
 		        </targetClasses>
 		        <targetTests>
-<!-- 		            <param>com.fullteaching.backend.unitary.chat*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.comment*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.course*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.coursedetails*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.entry*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.file*</param> -->
+		            <param>com.fullteaching.backend.unitary.chat*</param> 
+		        	<param>com.fullteaching.backend.unitary.comment*</param> 
+		        	<param>com.fullteaching.backend.unitary.course*</param> 
+		        	<param>com.fullteaching.backend.unitary.coursedetails*</param> 
+		        	<param>com.fullteaching.backend.unitary.entry*</param> 
+		        	<param>com.fullteaching.backend.unitary.file*</param>
 		        	<param>com.fullteaching.backend.unitary.filegroup*</param> 
-<!-- 		        	<param>com.fullteaching.backend.unitary.filereader*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.forum*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.security*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.session*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.user*</param>  -->
-<!-- 		        	<param>com.fullteaching.backend.unitary.utils*</param>  -->
+		        	<param>com.fullteaching.backend.unitary.filereader*</param> 
+		        	<param>com.fullteaching.backend.unitary.forum*</param> 
+		        	<param>com.fullteaching.backend.unitary.security*</param> 
+		        	<param>com.fullteaching.backend.unitary.session*</param> 
+		        	<param>com.fullteaching.backend.unitary.user*</param> 
+		        	<param>com.fullteaching.backend.unitary.utils*</param> 
 		        </targetTests>
 		        <avoidCallsTo>
 				    <avoidCallsTo>java.util.logging</avoidCallsTo>
