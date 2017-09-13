@@ -9,9 +9,9 @@ import org.mockito.Mock;
 import org.springframework.util.Assert;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.chat.Chat;
 import com.fullteaching.backend.chat.WebSocketChatUser;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 
@@ -31,7 +31,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testWebSocketChatUser() {
+	public void newWebSocketTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Assert.notNull(wschu);
 		Assert.isTrue(name.equals(wschu.getName()));
@@ -39,7 +39,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testNewChat() {
+	public void addChat2UserTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Chat ch = new Chat (null, chat_name, executor, teacher_name);
 		wschu.newChat(ch);
@@ -49,7 +49,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testChatClosed() {
+	public void closeChat4UserTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Assert.notNull(wschu);
 		Chat ch = new Chat (null, chat_name, executor, teacher_name);
@@ -58,7 +58,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testNewUserInChat() {
+	public void notifyNewUserInChatTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		WebSocketChatUser wschu2 = new WebSocketChatUser(session, "Second User", "Grey");
 
@@ -74,7 +74,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testUserExitedFromChat() {
+	public void notifyUserExitedChatTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		WebSocketChatUser wschu2 = new WebSocketChatUser(session, "Second User", "Grey");
 
@@ -86,7 +86,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testNewMessage() {
+	public void newMessageTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Assert.notNull(wschu);
 		Chat ch = new Chat (null, chat_name, executor, teacher_name);
@@ -102,7 +102,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testSendInterventionPetition() {
+	public void interventionPetitionTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Assert.notNull(wschu);
 		Chat ch = new Chat (null, chat_name, executor, teacher_name);
@@ -111,7 +111,7 @@ public class WebSocketChatUserUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGrantIntervention() {
+	public void grantInterventionTest() {
 		WebSocketChatUser wschu = new WebSocketChatUser(session, name, color);
 		Assert.notNull(wschu);
 		Chat ch = new Chat (null, chat_name, executor, teacher_name);

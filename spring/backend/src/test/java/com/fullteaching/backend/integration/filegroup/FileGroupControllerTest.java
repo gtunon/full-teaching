@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.filegroup;
+package com.fullteaching.backend.integration.filegroup;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -16,15 +16,15 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.coursedetails.CourseDetails;
 import com.fullteaching.backend.file.File;
 import com.fullteaching.backend.filegroup.FileGroup;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
-import com.fullteaching.backend.unitary.utils.FileTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.FileTestUtils;
 
-public class FileGroupControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class FileGroupControllerTest extends AbstractLoggedControllerUnitTest {
 
 	private static String newFile_uri="/api-files/";//{courseDetails_id}
 	private static String modifyGroupFile_uri="/api-files/edit/file-group/course/";//{courseId}

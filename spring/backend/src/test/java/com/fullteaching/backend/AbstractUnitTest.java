@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary;
+package com.fullteaching.backend;
 
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

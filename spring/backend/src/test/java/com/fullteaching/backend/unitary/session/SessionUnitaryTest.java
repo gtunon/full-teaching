@@ -4,10 +4,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.session.Session;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
 import com.fullteaching.backend.user.User;
 
 public class SessionUnitaryTest extends AbstractUnitTest {

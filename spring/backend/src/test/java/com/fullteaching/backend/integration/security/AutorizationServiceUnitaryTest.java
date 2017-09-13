@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.security;
+package com.fullteaching.backend.integration.security;
 
 
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.security.AuthorizationService;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 import com.fullteaching.backend.user.User;
 import com.fullteaching.backend.user.UserComponent;
 

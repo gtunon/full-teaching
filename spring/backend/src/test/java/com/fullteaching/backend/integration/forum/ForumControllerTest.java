@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.forum;
+package com.fullteaching.backend.integration.forum;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -11,11 +11,11 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.course.Course;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
 
-public class ForumControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class ForumControllerTest extends AbstractLoggedControllerUnitTest {
 	
 	private static String toggleForum_uri = "/api-forum/edit/";
 	

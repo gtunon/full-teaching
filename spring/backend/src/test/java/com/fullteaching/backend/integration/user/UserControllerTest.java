@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.fullteaching.backend.unitary.user;
+package com.fullteaching.backend.integration.user;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -18,8 +18,8 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fullteaching.backend.unitary.AbstractControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.LoginTestUtils;
+import com.fullteaching.backend.AbstractControllerUnitTest;
+import com.fullteaching.backend.utils.LoginTestUtils;
 
 /**
  * @author gtunon
@@ -27,7 +27,7 @@ import com.fullteaching.backend.unitary.utils.LoginTestUtils;
  */
 /*@Transactional After each test the BBDD is rolled back*/
 @Transactional
-public class UserControllerUnitaryTest extends AbstractControllerUnitTest {
+public class UserControllerTest extends AbstractControllerUnitTest {
 		
 	//urls
 	static String new_user_uri = "/api-users/new";

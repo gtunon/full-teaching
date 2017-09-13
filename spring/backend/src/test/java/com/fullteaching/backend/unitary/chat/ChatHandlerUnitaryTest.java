@@ -11,8 +11,8 @@ import org.springframework.util.Assert;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.chat.ChatHandler;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class ChatHandlerUnitaryTest extends AbstractUnitTest {
 
@@ -26,6 +26,7 @@ public class ChatHandlerUnitaryTest extends AbstractUnitTest {
 	public void setUp() throws Exception {
 	}
 
+	@Ignore
 	@Test
 	public void testAfterConnectionEstablishedWebSocketSession() {
 		try {

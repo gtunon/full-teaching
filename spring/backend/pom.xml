@@ -115,7 +115,7 @@
 		        	<param>com.fullteaching.backend.unitary.security*</param> 
 		        	<param>com.fullteaching.backend.unitary.session*</param> 
 		        	<param>com.fullteaching.backend.unitary.user*</param> 
-		        	<param>com.fullteaching.backend.unitary.utils*</param> 
+		        	<param>com.fullteaching.backend.utils*</param> 
 		        </targetTests>
 		        <avoidCallsTo>
 				    <avoidCallsTo>java.util.logging</avoidCallsTo>

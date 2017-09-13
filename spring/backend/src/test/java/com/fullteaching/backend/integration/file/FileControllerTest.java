@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.file;
+package com.fullteaching.backend.integration.file;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,15 +16,15 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.fullteaching.backend.AbstractControllerUnitTest;
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.file.MimeTypes;
 import com.fullteaching.backend.filegroup.FileGroup;
-import com.fullteaching.backend.unitary.AbstractControllerUnitTest;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
-import com.fullteaching.backend.unitary.utils.FileTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.FileTestUtils;
 
-public class FileControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class FileControllerTest extends AbstractLoggedControllerUnitTest {
 
 	private static String upload_uri="/api-load-files/upload/course/{courseId}/file-group/";//{fileGroupId}
 	private static String download_uri="/api-load-files/course/{courseId}/download/";//{fileId}

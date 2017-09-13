@@ -1,6 +1,5 @@
 package com.fullteaching.backend.unitary.filegroup;
 
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.file.File;
 import com.fullteaching.backend.filegroup.FileGroup;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class FileGroupUnitaryTest extends AbstractUnitTest {
 
@@ -41,7 +40,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetId() {
+	public void setAndGetFileGroupIdTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		
@@ -50,7 +49,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetTitle() {
+	public void setAndGetTitleTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		
@@ -59,7 +58,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetFiles() {
+	public void setAndGetFilesTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		
@@ -72,7 +71,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetFileGroups() {
+	public void setAndGetFileGroupsTest() {
 		List<FileGroup> groups = new ArrayList<FileGroup>();
 		groups.add(new FileGroup(filegroup_name+"2"));
 		groups.add(new FileGroup(filegroup_name+"3"));
@@ -86,7 +85,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetFileGroupParent() {
+	public void setAndGetFileGroupParentTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		
@@ -100,7 +99,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testEqualsObject() {
+	public void fileGroupEqualTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		fg1.setId(1);
@@ -119,7 +118,7 @@ public class FileGroupUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testUpdateFileIndexOrder() {
+	public void updateFileIndexOrderTest() {
 		FileGroup fg1 = new FileGroup();
 		Assert.notNull(fg1);
 		

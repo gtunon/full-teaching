@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.entry;
+package com.fullteaching.backend.integration.entry;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -11,14 +11,14 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.comment.Comment;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.entry.Entry;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
 import com.google.gson.Gson;
 
-public class EntryControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class EntryControllerTest extends AbstractLoggedControllerUnitTest {
 	
 	
 	private static String newEntry_uri ="/api-entries/forum/";

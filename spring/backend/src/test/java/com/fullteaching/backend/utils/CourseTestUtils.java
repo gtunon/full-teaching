@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.utils;
+package com.fullteaching.backend.utils;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;

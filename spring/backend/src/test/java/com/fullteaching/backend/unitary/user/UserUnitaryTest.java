@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.Assert;
 
-import com.fullteaching.backend.unitary.AbstractUnitTest;
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.user.User;
 
 /**

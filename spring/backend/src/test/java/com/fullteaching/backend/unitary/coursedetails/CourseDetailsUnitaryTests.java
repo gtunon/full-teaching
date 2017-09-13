@@ -7,11 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.coursedetails.CourseDetails;
 import com.fullteaching.backend.filegroup.FileGroup;
 import com.fullteaching.backend.forum.Forum;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 import com.fullteaching.backend.user.User;
 
 public class CourseDetailsUnitaryTests extends AbstractUnitTest {
@@ -22,21 +22,18 @@ public class CourseDetailsUnitaryTests extends AbstractUnitTest {
 
 	@Test
 	public void newCourseDetailsTest() {
-		CourseDetails cd = new CourseDetails();
-		Assert.notNull(cd);
-	}
-
-	@Test
-	public void testCourseDetailsCourse() {
 		String[] roles = {"TEACHER"};
 		User u =  new User("mock", "Pass1234", "mock", null, roles);
 
+		CourseDetails cd = new CourseDetails();
+		Assert.notNull(cd);
+		
 		Course c = new Course("to modify", "/../assets/images/default_session_image.png", u);
 
-		CourseDetails cd = new CourseDetails(c);
+		CourseDetails cd2 = new CourseDetails(c);
 		
-		Assert.notNull(cd);
-		Assert.isTrue(cd.getCourse().equals(c));
+		Assert.notNull(cd2);
+		Assert.isTrue(cd2.getCourse().equals(c));
 		
 	}
 

@@ -1,7 +1,5 @@
 package com.fullteaching.backend.unitary.chat;
 
-import static org.junit.Assert.*;
-
 import java.util.concurrent.ExecutorService;
 
 import org.junit.Before;
@@ -11,10 +9,10 @@ import org.mockito.Mock;
 import org.springframework.util.Assert;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.chat.Chat;
 import com.fullteaching.backend.chat.ChatManager;
 import com.fullteaching.backend.chat.WebSocketChatUser;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class ChatUnitaryTest extends AbstractUnitTest {
 
@@ -38,7 +36,7 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testChat() {
+	public void newChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		
@@ -46,7 +44,7 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testAddUser() {
+	public void addUser2ChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		
@@ -58,10 +56,11 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 		Assert.isTrue(ch.getUser(user_name).equals(wschu));
 		Assert.isTrue(ch.getUser(teacher_name).equals(wscht));
 		Assert.isTrue(ch.getUsers().size()==2);
+		Assert.isTrue(chat_name.equals(ch.getName()));
 	}
 
 	@Test
-	public void testRemoveUser() {
+	public void removeUserFromChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		
@@ -77,16 +76,17 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 
 	@Ignore //unitary test on chatManager.closeChat
 	@Test
-	public void testClose() {
+	public void closeChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		
 		Assert.notNull(ch);
 		ch.close();
+		
 	}
 
 	@Test 
-	public void testSendMessage() {
+	public void sendMessage2ChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
@@ -96,7 +96,7 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testRequestIntervention() {
+	public void requestInterventionTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
@@ -108,7 +108,7 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGrantIntervention() {
+	public void grantInterventionTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
@@ -118,7 +118,7 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetUsers() {
+	public void getUsersFromChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
@@ -127,17 +127,9 @@ public class ChatUnitaryTest extends AbstractUnitTest {
 		Assert.isTrue(ch.getUsers().contains(wschu));
 	}
 
-	@Test
-	public void testGetName() {
-		
-		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
-		
-		Assert.notNull(ch);
-		Assert.isTrue(chat_name.equals(ch.getName()));
-	}
 
 	@Test
-	public void testGetUser() {
+	public void getUserFromChatTest() {
 		
 		Chat ch = new Chat (chatManager, chat_name, executor, teacher_name);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);

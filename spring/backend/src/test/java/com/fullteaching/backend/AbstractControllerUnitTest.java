@@ -1,15 +1,11 @@
-package com.fullteaching.backend.integration;
+package com.fullteaching.backend;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 
 import java.io.IOException;
 
-import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -19,15 +15,48 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fullteaching.backend.course.CourseRepository;
+import com.fullteaching.backend.coursedetails.CourseDetailsRepository;
+import com.fullteaching.backend.file.FileRepository;
+import com.fullteaching.backend.filegroup.FileGroupRepository;
+import com.fullteaching.backend.forum.ForumRepository;
+import com.fullteaching.backend.security.AuthorizationService;
+import com.fullteaching.backend.session.SessionRepository;
+import com.fullteaching.backend.user.UserComponent;
+import com.fullteaching.backend.user.UserRepository;
 
+import io.openvidu.java.client.OpenVidu;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
 @WebAppConfiguration
-public abstract class AbstractControllerIntegrationTest{
+public abstract class AbstractControllerUnitTest extends AbstractUnitTest {
 
-	protected Logger logger = LoggerFactory.getLogger(this.getClass());
-
+	@Mock
+	protected UserRepository userRepository;
+		
+	@Mock
+	protected AuthorizationService authorizationService;  
+	
+	@Mock
+	protected CourseRepository courseRepository;
+	
+	@Autowired
+	protected UserComponent user;
+	
+	@Mock
+	protected CourseDetailsRepository courseDetailsRepository;
+	
+	@Mock
+	protected ForumRepository forumRepository;
+	
+	@Mock
+	private SessionRepository sessionRepository;
+	
+	@Mock
+	private FileGroupRepository fileGroupRepository;
+	
+	@Mock
+	private FileRepository fileRepository;
+	
 		
 	protected MockMvc mvc; 
 	

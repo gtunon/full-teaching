@@ -4,8 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.file.File;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class FileUnitaryTest extends AbstractUnitTest {
 
@@ -21,7 +21,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testFile() {
+	public void newFileTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -59,7 +59,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	
 
 	@Test
-	public void testGetId() {
+	public void setAndGetFileIdTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -70,7 +70,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetType() {
+	public void setAndGetFileTypeTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -82,7 +82,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetName() {
+	public void setAndGetFileNameTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -93,7 +93,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetNameIdent() {
+	public void setAndGetFileNameIdentTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -105,7 +105,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetLink() {
+	public void setAndGetFileLinkTest() {
 		File f1 = new File (filetype, filename);
 		Assert.notNull(f1);
 		Assert.isTrue(filetype==f1.getType());
@@ -154,7 +154,7 @@ public class FileUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetFileExtension() {
+	public void getFileExtTest() {
 		File f1 = new File (filetype, filename);
 		f1.setId(5);
 		Assert.notNull(f1);

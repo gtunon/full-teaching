@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.course;
+package com.fullteaching.backend.integration.course;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -17,13 +17,13 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.course.Course;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
-import com.fullteaching.backend.unitary.utils.LoginTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.LoginTestUtils;
 import com.fullteaching.backend.user.User;
 
-public class CourseControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class CourseControllerTest extends AbstractLoggedControllerUnitTest {
 
 	
 	private static String getCourses_uri = "/api-courses/user/";

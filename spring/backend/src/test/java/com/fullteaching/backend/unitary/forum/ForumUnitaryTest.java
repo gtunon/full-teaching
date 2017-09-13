@@ -1,10 +1,14 @@
 package com.fullteaching.backend.unitary.forum;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
+import com.fullteaching.backend.entry.Entry;
 import com.fullteaching.backend.forum.Forum;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class ForumUnitaryTest extends AbstractUnitTest {
 
@@ -37,8 +41,13 @@ public class ForumUnitaryTest extends AbstractUnitTest {
 
 	@Test
 	public void testGetEntries() {
-		//TODO
-		Assert.isTrue(true);
+		Forum f = new Forum();
+		List<Entry> entries = new ArrayList<Entry>();
+		
+		f.setEntries(entries);
+		
+		Assert.notNull(f);
+		Assert.isTrue(f.getEntries().equals(entries));
 	}
 
 }

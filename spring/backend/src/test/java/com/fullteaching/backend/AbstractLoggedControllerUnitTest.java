@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary;
+package com.fullteaching.backend;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fullteaching.backend.unitary.utils.LoginTestUtils;
+import com.fullteaching.backend.utils.LoginTestUtils;
 import com.fullteaching.backend.user.User;
 
 @WebAppConfiguration

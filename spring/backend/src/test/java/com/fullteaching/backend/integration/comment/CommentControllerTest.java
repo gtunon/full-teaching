@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.comment;
+package com.fullteaching.backend.integration.comment;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -12,15 +12,15 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.comment.Comment;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.entry.Entry;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
-import com.fullteaching.backend.unitary.utils.ForumTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.ForumTestUtils;
 import com.google.gson.Gson;
 
-public class CommentControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class CommentControllerTest extends AbstractLoggedControllerUnitTest {
 
 	private static String newComment_uri ="/api-comments/entry/{entryId}/forum/";
 	

@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.security;
+package com.fullteaching.backend.integration.security;
 
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -17,8 +17,8 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.fullteaching.backend.unitary.AbstractControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.LoginTestUtils;
+import com.fullteaching.backend.AbstractControllerUnitTest;
+import com.fullteaching.backend.utils.LoginTestUtils;
 
 public class LoginControllerUnitaryTest extends AbstractControllerUnitTest {
 

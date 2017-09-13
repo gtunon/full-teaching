@@ -4,9 +4,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.util.Assert;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.coursedetails.CourseDetails;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 import com.fullteaching.backend.user.User;
 
 public class CourseUnitaryTest extends AbstractUnitTest {
@@ -21,15 +21,12 @@ public class CourseUnitaryTest extends AbstractUnitTest {
 		String [] roles = {"ROLE_TEACHER"};
 		teacher = new User("mock_teacher","mock2222","t_mocky", null,roles);
 	}
-	
-	@Test
-	public void newEmptyCourseTest() {
-		Course c = new Course();
-		Assert.notNull(c);
-	}
 
 	@Test
 	public void newCourseTest() {
+		Course c2 = new Course();
+		Assert.notNull(c2);
+		
 		Course c = new Course(title, image, teacher);
 		Assert.notNull(c);
 		Assert.isTrue(c.getTeacher().equals(teacher));
@@ -38,23 +35,21 @@ public class CourseUnitaryTest extends AbstractUnitTest {
 		Assert.notNull(c.getSessions());
 		Assert.notNull(c.getAttenders());
 		Assert.isNull(c.getCourseDetails());
-	}
-
-	@Test
-	public void newCourseWithCourseDetailsTest() {
+		
 		CourseDetails cd = new CourseDetails();
 		
-		Course c = new Course(title, image, teacher, cd);
-		Assert.notNull(c);
-		Assert.isTrue(c.getTeacher().equals(teacher));
-		Assert.isTrue(c.getImage().equals(image));
-		Assert.isTrue(c.getTitle().equals(title));
-		Assert.notNull(c.getSessions());
-		Assert.notNull(c.getAttenders());
-		Assert.notNull(c.getCourseDetails());
+		Course c3 = new Course(title, image, teacher, cd);
+		Assert.notNull(c3);
+		Assert.isTrue(c3.getTeacher().equals(teacher));
+		Assert.isTrue(c3.getImage().equals(image));
+		Assert.isTrue(c3.getTitle().equals(title));
+		Assert.notNull(c3.getSessions());
+		Assert.notNull(c3.getAttenders());
+		Assert.notNull(c3.getCourseDetails());
 		
-		Assert.isTrue(c.getCourseDetails().equals(cd));
+		Assert.isTrue(c3.getCourseDetails().equals(cd));
 	}
+
 
 	@Test
 	public void setAndGetCourseTitleTest() {

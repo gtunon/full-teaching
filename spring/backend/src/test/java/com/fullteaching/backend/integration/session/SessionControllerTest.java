@@ -1,4 +1,4 @@
-package com.fullteaching.backend.unitary.session;
+package com.fullteaching.backend.integration.session;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -13,14 +13,14 @@ import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.fullteaching.backend.AbstractLoggedControllerUnitTest;
 import com.fullteaching.backend.course.Course;
 import com.fullteaching.backend.session.Session;
-import com.fullteaching.backend.unitary.AbstractLoggedControllerUnitTest;
-import com.fullteaching.backend.unitary.utils.CourseTestUtils;
-import com.fullteaching.backend.unitary.utils.SessionTestUtils;
+import com.fullteaching.backend.utils.CourseTestUtils;
+import com.fullteaching.backend.utils.SessionTestUtils;
 import com.google.gson.Gson;
 
-public class SessionControllerUnitaryTest extends AbstractLoggedControllerUnitTest {
+public class SessionControllerTest extends AbstractLoggedControllerUnitTest {
 	
 	private static String newSession_uri="/api-sessions/course/";
 	private static String editSession_uri="/api-sessions/edit";

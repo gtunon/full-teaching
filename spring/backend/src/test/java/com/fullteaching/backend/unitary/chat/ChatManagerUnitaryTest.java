@@ -12,10 +12,10 @@ import org.mockito.Mock;
 import org.springframework.util.Assert;
 import org.springframework.web.socket.WebSocketSession;
 
+import com.fullteaching.backend.AbstractUnitTest;
 import com.fullteaching.backend.chat.Chat;
 import com.fullteaching.backend.chat.ChatManager;
 import com.fullteaching.backend.chat.WebSocketChatUser;
-import com.fullteaching.backend.unitary.AbstractUnitTest;
 
 public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	
@@ -35,13 +35,13 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testChatManagerInt() {
+	public void newChatManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 	}
 
 	@Test
-	public void testNewUser() {
+	public void addChatUser2ManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
@@ -55,7 +55,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testNewChat() {
+	public void addChat2ManagerTest() {
 		ChatManager chm = new ChatManager(1);
 		Assert.notNull(chm);
 		
@@ -95,7 +95,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetChats() {
+	public void getChatsFromManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		
 		try {
@@ -114,7 +114,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetChat() {
+	public void getChatByNameFromManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 
@@ -134,7 +134,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetUsers() {
+	public void getUsersFromManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
 		chm.newUser(wschu);
@@ -145,7 +145,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetUser() {
+	public void getUserByNameFromManagerTest() {
 		ChatManager chm = new ChatManager(10);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
 		chm.newUser(wschu);
@@ -155,7 +155,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testRemoveUserFromChatManager() {
+	public void removeUserFromChatTest() {
 		ChatManager chm = new ChatManager(10);
 		WebSocketChatUser wschu = new WebSocketChatUser(session, user_name, color);
 		chm.newUser(wschu);
@@ -168,7 +168,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testChatExists() {
+	public void checkIfChatExistsTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 		Chat ch = new Chat (chm, chat_name, executor, teacher_name);
@@ -191,7 +191,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testUserAtLeastInOneChat() {
+	public void checkIfUserAtLeastIOneChatTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 		try {
@@ -217,7 +217,7 @@ public class ChatManagerUnitaryTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testCloseChat() {
+	public void closeChatTest() {
 		ChatManager chm = new ChatManager(10);
 		Assert.notNull(chm);
 		
